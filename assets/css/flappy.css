@@ -1,0 +1,115 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #0d262d;
+    color: white;
+    height: 100%;
+
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+
+}
+/* definindo a borda do box*/
+*{
+    box-sizing: border-box;
+}
+/*defindo a fonte de letra (tamanho e tipo de letra em assets/fonts*/
+@font-face {
+    font-family:"Pixel" ;
+    src: url('../fonts/Pixel.ttf');
+}
+/*PASSANDO PARA A CRIAÇÃO DO GAME*/
+.game {
+    position: relative;
+/*criando a barra de rolagem*/
+    border: 5px solid dodgerblue;
+    height: 650px;
+/*colocação posterior)*/
+    min-height: 650px;
+    overflow-y: scroll;
+/*tamanho da caixa aonde vai rodar o jogo*/
+    width: 1200px;
+/* cor dentro da caixa do jogo*/
+    background-color: deepskyblue;
+/* Faz o movimento das barreiras do jogo, 
+se ocultar aparecera uma barra de rolagem 
+no jogo na parte inferior*/
+    overflow-x: hidden;
+}
+
+/*CRIANDO AS BARREIRAS*/
+.barreiras {
+/*temporárias
+    background-color: red;
+    width: 20px;
+    fim temporárias*/
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda {
+    height: 30px;
+    width: 120px;
+/*montar gradiente as bordas das barreiras ficarão com degrade*/
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border: 2px solid black;
+}
+/*criando o corpo das barreiras*/
+.barreira .corpo {
+    height: 150px;
+    width: 110px;
+/*montar gradiente as bordas das barreiras ficarão com degrade*/
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+/*layout dos pontos (score do jogo)*/
+.pontos {
+    position: absolute;
+    top: 10;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
+/*eixo de altura z-index passando o score para frente*/
+    z-index: 100;
+}
+
+/*fazendo característica do pássaro*/
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);
+    z-index: 99;
+}
+
+.pause {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pausebanner {
+    width: 320px;
+    padding: 10px;
+    border: 5px linear-gradient(90deg, #930601, #412ee8);;
+    margin: 0;
+  }
+
